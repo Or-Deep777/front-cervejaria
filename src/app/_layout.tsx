@@ -1,15 +1,27 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { Tabs } from "expo-router";
+export default function Layout(){
+  return(
+    <Tabs>
+      <Tabs.Screen 
+      name="index"
+      options={{
+        title:"Home"
+      }}
+      />
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+      <Tabs.Screen 
+      name="cadastro"
+      options={{
+        title:"Cadastrar"
+      }}
+      />
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
-  );
+      <Tabs.Screen 
+      name="listar"
+      options={{
+        title:"Listar"
+      }}
+      />
+    </Tabs>
+  )
 }
